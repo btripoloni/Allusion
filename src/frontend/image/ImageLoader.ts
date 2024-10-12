@@ -11,6 +11,7 @@ import PsdLoader from './PSDLoader';
 import { generateThumbnailUsingWorker } from './ThumbnailGeneration';
 import TifLoader from './TifLoader';
 import { generateThumbnail, getBlob } from './util';
+import { generateVideoThumbnail } from './VideoThumbnailGeneration';
 
 type FormatHandlerType =
   | 'web'
@@ -104,6 +105,10 @@ class ImageLoader {
     switch (handlerType) {
       case 'web':
         await generateThumbnailUsingWorker(file, thumbnailPath);
+        updateThumbnailPath(file, thumbnailPath);
+        break;
+      case 'video':
+        await generateVideoThumbnail(file, thumbnailPath);
         updateThumbnailPath(file, thumbnailPath);
         break;
       case 'tifLoader':

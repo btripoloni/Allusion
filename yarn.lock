@@ -1401,6 +1401,11 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@rajesh896/video-thumbnails-generator@^2.3.9":
+  version "2.3.9"
+  resolved "https://registry.yarnpkg.com/@rajesh896/video-thumbnails-generator/-/video-thumbnails-generator-2.3.9.tgz#2d3b0a2451ab33a4f580ba7599f616804da39a7c"
+  integrity sha512-tV775KsZpyhaXMG/z+APNBL8bpGSaYgvCmELC7k3z0n6rGcFhsDhFFqJkmguiVR83bNLWth8wdFOGkpsBS3Jzw==
+
 "@sinclair/typebox@^0.25.16":
   version "0.25.24"
   resolved "https://registry.yarnpkg.com/@sinclair/typebox/-/typebox-0.25.24.tgz#8c7688559979f7079aacaf31aa881c3aa410b718"
