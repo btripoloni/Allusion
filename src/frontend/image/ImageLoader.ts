@@ -4,7 +4,7 @@ import StreamZip from 'node-stream-zip';
 
 import ExifIO from 'common/ExifIO';
 import { thumbnailMaxSize } from 'common/config';
-import { FileDTO, IMG_EXTENSIONS_TYPE } from '../../api/file';
+import { FileDTO, EXTENSIONS_TYPE } from '../../api/file';
 import { ClientFile } from '../entities/File';
 import ExrLoader from './ExrLoader';
 import PsdLoader from './PSDLoader';
@@ -18,9 +18,10 @@ type FormatHandlerType =
   | 'exrLoader'
   | 'psdLoader'
   | 'extractEmbeddedThumbnailOnly'
-  | 'none';
+  | 'none'
+  | 'video';
 
-const FormatHandlers: Record<IMG_EXTENSIONS_TYPE, FormatHandlerType> = {
+const FormatHandlers: Record<EXTENSIONS_TYPE, FormatHandlerType> = {
   gif: 'web',
   png: 'web',
   apng: 'web',
@@ -38,6 +39,8 @@ const FormatHandlers: Record<IMG_EXTENSIONS_TYPE, FormatHandlerType> = {
   // xcf: 'extractEmbeddedThumbnailOnly',
   exr: 'exrLoader',
   // avif: 'sharp',
+  mp4: 'video',
+  webm: 'video',
 };
 
 type ObjectURL = string;

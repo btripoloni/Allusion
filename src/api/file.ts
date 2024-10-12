@@ -22,7 +22,7 @@ export type FileDTO = {
   /** Duplicate data; also exists as part of the absolutePath. Used for DB queries */
   name: string;
   /** in lowercase, without the dot */
-  extension: IMG_EXTENSIONS_TYPE;
+  extension: EXTENSIONS_TYPE;
   /** Size in bytes */
   size: number;
   width: number;
@@ -31,7 +31,7 @@ export type FileDTO = {
   dateCreated: Date;
 };
 
-export const IMG_EXTENSIONS = [
+export const EXTENSIONS = [
   'gif',
   'png',
   'apng',
@@ -53,5 +53,9 @@ export const IMG_EXTENSIONS = [
   // 'avif',
   // 'heic', // not supported by Sharp out of the box https://github.com/lovell/sharp/issues/2871
   // TODO: 'blend', raw, etc.?
+
+  // video support
+  'mp4',
+  'webm',
 ] as const;
-export type IMG_EXTENSIONS_TYPE = typeof IMG_EXTENSIONS[number];
+export type EXTENSIONS_TYPE = (typeof EXTENSIONS)[number];
