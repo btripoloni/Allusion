@@ -155,6 +155,8 @@ class ImageLoader {
     switch (handlerType) {
       case 'web':
         return file.absolutePath;
+      case 'video':
+        return file.absolutePath;
       case 'tifLoader': {
         const src =
           this.srcBufferCache.get(file) ?? (await getBlob(this.tifLoader, file.absolutePath));
