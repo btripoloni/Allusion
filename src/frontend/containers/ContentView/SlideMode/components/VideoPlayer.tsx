@@ -46,6 +46,7 @@ export function VideoPlayer({
           height={height}
           autoPlay
           loop
+          controls
         ></video>
       )}
     </ZoomPan>
