@@ -55,17 +55,7 @@ export const ContentSelector = observer(
           />
         );
       case 'video':
-        return (
-          <VideoPlayer
-            file={file}
-            width={width}
-            height={height}
-            transitionStart={transitionStart}
-            transitionEnd={transitionEnd}
-            onClose={uiStore.disableSlideMode}
-            upscaleMode={uiStore.upscaleMode}
-          />
-        );
+        return <VideoPlayer file={file} width={width} height={height} />;
       default:
         return <ImageFallback error={true} absolutePath={file.absolutePath} />;
     }
