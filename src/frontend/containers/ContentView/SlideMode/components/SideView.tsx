@@ -7,8 +7,8 @@ import { useAction, useComputed } from 'src/frontend/hooks/mobx';
 import { CommandDispatcher } from '../../Commands';
 import { SlideTransform } from '../ZoomPan';
 import { createTransform } from '../utils';
-import { ZoomableImage } from './ZoombableImage';
 import { NavigationButtons } from './NavigationButtons';
+import { ContentSelector } from './ContentSelector';
 
 interface SlideViewProps {
   width: number;
@@ -142,15 +142,13 @@ export const SlideView = observer(({ width, height }: SlideViewProps) => {
       tabIndex={-1}
     >
       {file && (
-        <ZoomableImage
+        <ContentSelector
           file={file}
-          thumbnailSrc={file.thumbnailPath}
+          thumbnail={file.thumbnailPath}
           width={width}
           height={height}
           transitionStart={transitionStart}
-          transitionEnd={uiStore.isSlideMode ? undefined : transitionStart}
-          onClose={uiStore.disableSlideMode}
-          upscaleMode={uiStore.upscaleMode}
+          uiStore={uiStore}
         />
       )}
       <NavigationButtons
